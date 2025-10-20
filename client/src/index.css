@@ -239,10 +239,15 @@
 @layer base {
   * {
     @apply border-border;
+    cursor: none !important;
   }
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  input, textarea, select {
+    cursor: text !important;
   }
 }
 

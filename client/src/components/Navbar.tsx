@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
@@ -7,11 +6,28 @@ import { ThemeToggle } from "./ThemeToggle";
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
+
+      // Update active section based on scroll position
+      const sections = ["hero", "about", "experience", "projects", "achievements", "contact"];
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -34,22 +50,30 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-black/20 backdrop-blur-xl border-b border-white/10 shadow-[0_0_30px_rgba(34,211,238,0.1)]"
-          : "bg-transparent"
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
+        isScrolled ? "w-[90%] max-w-4xl" : "w-[95%] max-w-6xl"
       }`}
       data-testid="navbar"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <div
+        className={`relative overflow-hidden rounded-full transition-all duration-500 ${
+          isScrolled
+            ? "bg-background/60 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(34,211,238,0.15)]"
+            : "bg-background/40 backdrop-blur-xl border border-white/5"
+        }`}
+      >
+        {/* Animated gradient border */}
+        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-cyan/20 via-neon-blue/20 to-neon-teal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+        <div className="relative flex items-center justify-between px-6 md:px-8 h-14 md:h-16">
           {/* Logo */}
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-2xl font-bold bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-teal bg-clip-text text-transparent animate-gradient-shift bg-300% hover-elevate active-elevate-2 rounded-md px-3 py-2"
+            className="relative text-xl md:text-2xl font-bold bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-teal bg-clip-text text-transparent hover:scale-110 transition-transform duration-300"
             data-testid="link-logo"
           >
             AP
+            <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-neon-cyan to-neon-teal scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
           </button>
 
           {/* Desktop Navigation */}
@@ -58,13 +82,27 @@ export function Navbar() {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-neon-cyan transition-colors hover-elevate active-elevate-2 rounded-md"
+                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full group ${
+                  activeSection === link.href
+                    ? "text-neon-cyan"
+                    : "text-foreground/70 hover:text-foreground"
+                }`}
                 data-testid={`link-${link.href}`}
               >
-                {link.label}
+                <span className="relative z-10">{link.label}</span>
+                <div
+                  className={`absolute inset-0 rounded-full bg-neon-cyan/10 transition-all duration-300 ${
+                    activeSection === link.href
+                      ? "opacity-100 scale-100"
+                      : "opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100"
+                  }`}
+                />
+                {activeSection === link.href && (
+                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-gradient-to-r from-neon-cyan to-neon-teal rounded-full" />
+                )}
               </button>
             ))}
-            <div className="ml-2">
+            <div className="ml-2 pl-2 border-l border-white/10">
               <ThemeToggle />
             </div>
           </div>
@@ -76,12 +114,13 @@ export function Navbar() {
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="hover:bg-neon-cyan/10"
               data-testid="button-mobile-menu"
             >
               {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-5 w-5" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-5 w-5" />
               )}
             </Button>
           </div>
@@ -90,13 +129,17 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-black/40 backdrop-blur-xl border-t border-white/10">
-          <div className="px-6 py-4 space-y-2">
+        <div className="md:hidden mt-2 bg-background/80 backdrop-blur-2xl border border-white/10 rounded-3xl overflow-hidden shadow-[0_8px_32px_rgba(34,211,238,0.15)] animate-fade-in-up">
+          <div className="px-4 py-3 space-y-1">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground/80 hover:text-neon-cyan transition-colors hover-elevate active-elevate-2 rounded-md"
+                className={`block w-full text-left px-4 py-3 text-sm font-medium rounded-2xl transition-all duration-300 ${
+                  activeSection === link.href
+                    ? "bg-neon-cyan/10 text-neon-cyan"
+                    : "text-foreground/70 hover:text-foreground hover:bg-white/5"
+                }`}
                 data-testid={`mobile-link-${link.href}`}
               >
                 {link.label}
