@@ -83,8 +83,8 @@ export default {
         // Glassmorphism neon colors
         neon: {
           cyan: "hsl(var(--neon-cyan) / <alpha-value>)",
-          purple: "hsl(var(--neon-purple) / <alpha-value>)",
-          pink: "hsl(var(--neon-pink) / <alpha-value>)",
+          blue: "hsl(var(--neon-blue) / <alpha-value>)",
+          teal: "hsl(var(--neon-teal) / <alpha-value>)",
           green: "hsl(var(--neon-green) / <alpha-value>)",
         },
       },

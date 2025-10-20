@@ -46,7 +46,7 @@ export function Navbar() {
           {/* Logo */}
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-2xl font-bold bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-pink bg-clip-text text-transparent animate-gradient-shift bg-300% hover-elevate active-elevate-2 rounded-md px-3 py-2"
+            className="text-2xl font-bold bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-teal bg-clip-text text-transparent animate-gradient-shift bg-300% hover-elevate active-elevate-2 rounded-md px-3 py-2"
             data-testid="link-logo"
           >
             AP

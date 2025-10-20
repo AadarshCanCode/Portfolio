@@ -75,7 +75,7 @@ export function Contact() {
           {/* Contact Info */}
           <div className="space-y-8">
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-md p-8 shadow-[0_0_30px_rgba(34,211,238,0.1)]">
-              <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text text-transparent">
+              <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text text-transparent">
                 Contact Information
               </h3>
               
@@ -97,14 +97,14 @@ export function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4 group">
-                  <div className="w-10 h-10 bg-neon-purple/10 rounded-md border border-neon-purple/30 flex items-center justify-center flex-shrink-0 group-hover:bg-neon-purple/20 transition-all">
-                    <Phone className="w-5 h-5 text-neon-purple" />
+                  <div className="w-10 h-10 bg-neon-blue/10 rounded-md border border-neon-blue/30 flex items-center justify-center flex-shrink-0 group-hover:bg-neon-blue/20 transition-all">
+                    <Phone className="w-5 h-5 text-neon-blue" />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground mb-1">Phone</p>
                     <a
                       href={`tel:${personalInfo.phone}`}
-                      className="text-foreground hover:text-neon-purple transition-colors"
+                      className="text-foreground hover:text-neon-blue transition-colors"
                       data-testid="contact-phone"
                     >
                       {personalInfo.phone}
@@ -113,8 +113,8 @@ export function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4 group">
-                  <div className="w-10 h-10 bg-neon-pink/10 rounded-md border border-neon-pink/30 flex items-center justify-center flex-shrink-0 group-hover:bg-neon-pink/20 transition-all">
-                    <MapPin className="w-5 h-5 text-neon-pink" />
+                  <div className="w-10 h-10 bg-neon-teal/10 rounded-md border border-neon-teal/30 flex items-center justify-center flex-shrink-0 group-hover:bg-neon-teal/20 transition-all">
+                    <MapPin className="w-5 h-5 text-neon-teal" />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground mb-1">Location</p>
@@ -125,10 +125,10 @@ export function Contact() {
             </div>
 
             {/* Animated Decoration */}
-            <div className="hidden lg:block relative h-64 bg-gradient-to-br from-neon-cyan/10 via-neon-purple/10 to-neon-pink/10 rounded-md overflow-hidden">
+            <div className="hidden lg:block relative h-64 bg-gradient-to-br from-neon-cyan/10 via-neon-blue/10 to-neon-teal/10 rounded-md overflow-hidden">
               <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
               <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-neon-cyan/20 rounded-full blur-2xl animate-float" />
-              <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-neon-purple/20 rounded-full blur-2xl animate-float" style={{ animationDelay: "1s" }} />
+              <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-neon-blue/20 rounded-full blur-2xl animate-float" style={{ animationDelay: "1s" }} />
             </div>
           </div>
 

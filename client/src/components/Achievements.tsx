@@ -16,10 +16,10 @@ export function Achievements() {
         {/* Section Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 relative inline-block">
-            <span className="bg-gradient-to-r from-neon-pink via-neon-purple to-neon-cyan bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-neon-teal via-neon-blue to-neon-cyan bg-clip-text text-transparent">
               Achievements & Certifications
             </span>
-            <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-neon-pink via-neon-purple to-neon-cyan blur-sm" />
+            <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-neon-teal via-neon-blue to-neon-cyan blur-sm" />
           </h2>
         </div>
 
@@ -31,24 +31,24 @@ export function Achievements() {
             return (
               <div
                 key={achievement.id}
-                className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-md p-6 hover-elevate active-elevate-2 transition-all duration-300 shadow-[0_0_30px_rgba(320,85,65,0.1)] group animate-fade-in-up"
+                className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-md p-6 hover-elevate active-elevate-2 transition-all duration-300 shadow-[0_0_30px_rgba(59,130,246,0.1)] hover:shadow-[0_0_40px_rgba(34,211,238,0.2)] group animate-fade-in-up cursor-pointer"
                 style={{ animationDelay: `${index * 100}ms` }}
                 data-testid={`achievement-${achievement.id}`}
               >
                 <div className="flex items-start gap-4">
                   {/* Icon */}
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-neon-pink/20 to-neon-purple/20 rounded-md border border-neon-pink/30 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(320,85,65,0.3)] transition-all">
-                    <Icon className="w-6 h-6 text-neon-pink" />
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-neon-teal/20 to-neon-blue/20 rounded-md border border-neon-teal/30 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-all">
+                    <Icon className="w-6 h-6 text-neon-teal" />
                   </div>
 
                   {/* Content */}
                   <div className="flex-1">
                     <div className="flex items-start justify-between gap-4 mb-2">
-                      <h3 className="font-bold text-lg group-hover:text-neon-pink transition-colors">
+                      <h3 className="font-bold text-lg group-hover:text-neon-teal transition-colors">
                         {achievement.title}
                       </h3>
                       {achievement.date && (
-                        <span className="text-xs font-mono text-neon-purple/80 flex-shrink-0">
+                        <span className="text-xs font-mono text-neon-blue/80 flex-shrink-0">
                           {achievement.date}
                         </span>
                       )}

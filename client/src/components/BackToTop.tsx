@@ -31,7 +31,7 @@ export function BackToTop() {
     <Button
       onClick={scrollToTop}
       size="icon"
-      className="fixed bottom-6 left-6 z-40 h-12 w-12 rounded-full bg-white/5 backdrop-blur-md border border-white/20 hover:bg-neon-purple/20 hover:border-neon-purple/50 shadow-[0_0_20px_rgba(168,85,247,0.2)] transition-all animate-fade-in-up"
+      className="fixed bottom-6 left-6 z-40 h-12 w-12 rounded-full bg-white/5 backdrop-blur-md border border-white/20 hover:bg-neon-blue/20 hover:border-neon-blue/50 shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:scale-110 transition-all animate-fade-in-up"
       data-testid="button-back-to-top"
     >
       <ArrowUp className="h-5 w-5" />

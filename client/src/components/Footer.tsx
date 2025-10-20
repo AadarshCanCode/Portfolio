@@ -28,7 +28,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-pink bg-clip-text text-transparent mb-4">
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-teal bg-clip-text text-transparent mb-4">
               {personalInfo.name}
             </h3>
             <p className="text-sm text-muted-foreground mb-4">
@@ -116,7 +116,7 @@ export function Footer() {
             © {currentYear} {personalInfo.name}. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Built with <Heart className="w-4 h-4 text-neon-pink fill-neon-pink animate-pulse-glow" /> using React & Tailwind CSS
+            Built with <Heart className="w-4 h-4 text-neon-cyan fill-neon-cyan animate-pulse-glow" /> using React & Tailwind CSS
           </p>
         </div>
       </div>

@@ -16,7 +16,7 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Animated Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/20 via-neon-purple/20 to-neon-pink/20 animate-gradient-shift bg-300%" />
+      <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/20 via-neon-blue/20 to-neon-teal/20 animate-gradient-shift bg-300%" />
       
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
@@ -24,8 +24,8 @@ export function Hero() {
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-neon-cyan/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-purple/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-neon-pink/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-blue/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-neon-teal/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
       </div>
 
       {/* Content */}
@@ -40,7 +40,7 @@ export function Hero() {
           </div>
 
           {/* Name with Gradient */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-pink bg-clip-text text-transparent animate-gradient-shift bg-300% leading-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-teal bg-clip-text text-transparent animate-gradient-shift bg-300% leading-tight">
             {personalInfo.name}
           </h1>
 
@@ -69,7 +69,7 @@ export function Hero() {
               size="lg"
               variant="outline"
               onClick={() => scrollToSection("contact")}
-              className="bg-white/5 backdrop-blur-md border-white/20 hover:bg-white/10 hover:border-neon-purple/50 shadow-[0_0_20px_rgba(168,85,247,0.2)]"
+              className="bg-white/5 backdrop-blur-md border-white/20 hover:bg-white/10 hover:border-neon-blue/50 shadow-[0_0_20px_rgba(59,130,246,0.2)]"
               data-testid="button-contact-me"
             >
               <Mail className="mr-2 h-4 w-4" />

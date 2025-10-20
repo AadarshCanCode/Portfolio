@@ -78,18 +78,18 @@ export function ChatBubble() {
         <Button
           size="icon"
           onClick={() => setIsOpen(true)}
-          className="h-14 w-14 rounded-full bg-gradient-to-r from-neon-cyan to-neon-purple shadow-[0_0_30px_rgba(34,211,238,0.4)] border-2 border-neon-cyan/50 hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] transition-all animate-pulse-glow"
+          className="h-14 w-14 rounded-full bg-gradient-to-r from-neon-cyan to-neon-blue shadow-[0_0_30px_rgba(34,211,238,0.4)] border-2 border-neon-cyan/50 hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] transition-all animate-pulse-glow"
           data-testid="button-open-chat"
         >
           <MessageCircle className="h-6 w-6" />
-          <span className="absolute -top-1 -right-1 w-3 h-3 bg-neon-pink rounded-full border-2 border-background animate-pulse" />
+          <span className="absolute -top-1 -right-1 w-3 h-3 bg-neon-teal rounded-full border-2 border-background animate-pulse" />
         </Button>
       ) : (
         <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-md shadow-[0_0_40px_rgba(34,211,238,0.2)] w-96 max-w-[calc(100vw-3rem)] h-[500px] flex flex-col overflow-hidden animate-fade-in-up">
           {/* Header */}
-          <div className="bg-gradient-to-r from-neon-cyan/20 to-neon-purple/20 border-b border-white/10 p-4 flex items-center justify-between">
+          <div className="bg-gradient-to-r from-neon-cyan/20 to-neon-blue/20 border-b border-white/10 p-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-neon-cyan to-neon-purple flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-neon-cyan to-neon-blue flex items-center justify-center">
                 <Sparkles className="w-4 h-4 text-background" />
               </div>
               <div>
@@ -120,7 +120,7 @@ export function ChatBubble() {
                     className={`max-w-[80%] px-4 py-2 rounded-md text-sm ${
                       message.role === "user"
                         ? "bg-neon-cyan/20 border border-neon-cyan/30 text-foreground"
-                        : "bg-neon-purple/20 border border-neon-purple/30 text-foreground"
+                        : "bg-neon-blue/20 border border-neon-blue/30 text-foreground"
                     }`}
                     data-testid={`message-${message.role}-${index}`}
                   >
@@ -130,11 +130,11 @@ export function ChatBubble() {
               ))}
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="bg-neon-purple/20 border border-neon-purple/30 px-4 py-2 rounded-md text-sm">
+                  <div className="bg-neon-blue/20 border border-neon-blue/30 px-4 py-2 rounded-md text-sm">
                     <div className="flex gap-1">
-                      <div className="w-2 h-2 bg-neon-purple rounded-full animate-pulse" />
-                      <div className="w-2 h-2 bg-neon-purple rounded-full animate-pulse" style={{ animationDelay: "0.2s" }} />
-                      <div className="w-2 h-2 bg-neon-purple rounded-full animate-pulse" style={{ animationDelay: "0.4s" }} />
+                      <div className="w-2 h-2 bg-neon-blue rounded-full animate-pulse" />
+                      <div className="w-2 h-2 bg-neon-blue rounded-full animate-pulse" style={{ animationDelay: "0.2s" }} />
+                      <div className="w-2 h-2 bg-neon-blue rounded-full animate-pulse" style={{ animationDelay: "0.4s" }} />
                     </div>
                   </div>
                 </div>

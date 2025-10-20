@@ -8,17 +8,17 @@ export function Experience() {
         {/* Section Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 relative inline-block">
-            <span className="bg-gradient-to-r from-neon-purple to-neon-pink bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-neon-blue to-neon-teal bg-clip-text text-transparent">
               Work Experience
             </span>
-            <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-neon-purple to-neon-pink blur-sm" />
+            <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-neon-blue to-neon-teal blur-sm" />
           </h2>
         </div>
 
         {/* Timeline */}
         <div className="relative">
           {/* Vertical Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-neon-cyan via-neon-purple to-neon-pink hidden md:block" />
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-neon-cyan via-neon-blue to-neon-teal hidden md:block" />
 
           <div className="space-y-12">
             {experience.map((exp, index) => (
@@ -34,11 +34,11 @@ export function Experience() {
 
                 {/* Content Card */}
                 <div className={`flex-1 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}>
-                  <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-md p-6 md:p-8 hover-elevate active-elevate-2 transition-all duration-300 shadow-[0_0_30px_rgba(168,85,247,0.1)] animate-fade-in-up">
+                  <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-md p-6 md:p-8 hover-elevate active-elevate-2 transition-all duration-300 shadow-[0_0_30px_rgba(59,130,246,0.1)] hover:shadow-[0_0_40px_rgba(34,211,238,0.2)] animate-fade-in-up cursor-pointer">
                     {/* Header */}
                     <div className="mb-6">
                       <div className="flex items-start justify-between gap-4 mb-3">
-                        <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text text-transparent">
+                        <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text text-transparent">
                           {exp.role}
                         </h3>
                         {exp.current && (
@@ -49,11 +49,11 @@ export function Experience() {
                       </div>
                       <div className="flex flex-col gap-2 text-sm text-muted-foreground">
                         <div className="flex items-center gap-2">
-                          <Briefcase className="w-4 h-4 text-neon-purple" />
+                          <Briefcase className="w-4 h-4 text-neon-blue" />
                           <span className="font-medium text-foreground/90">{exp.company}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4 text-neon-pink" />
+                          <Calendar className="w-4 h-4 text-neon-teal" />
                           <span className="font-mono">{exp.period}</span>
                         </div>
                       </div>
